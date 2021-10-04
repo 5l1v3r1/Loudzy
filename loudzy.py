@@ -15,6 +15,7 @@ with open('headers.json', 'r') as hdrfile:
 print(f'Loaded {str(len(urls))} urls.')
 while 1: # Infinite loop to randomly open sites, with random timeout
     try:
+        headers['Referer'] = 'https://' + choice(urls)
         url = 'https://' + choice(urls)
         sleep = randint(3,7)
         print(f'Visiting {url}')
